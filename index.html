@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!-- This is based on DillingerLee's great template here:
+https://github.com/Team-Code/KA_Offline -->
+<html> 
+ <head>
+    <title>Processing.JS inside Webpages: Template</title> 
+</head>
+ <body>
+    <p align="center"> 
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ </body>
+ 
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+ 
+ <script>
+    var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+        size(400, 400); 
+        frameRate(60);
+        
+       var textinw = width;
+var timer = 0;
+var acce = 0.01;
+var something = 0;
+var fills =  color(0, 0, 0);
+var fill2 = color(255, 255, 255);
+var timeThingymaBobber = 0;
+var thingtrue = 0;
+var gencycle = 0;
+var fill3 = color(255, 255, 255);
+var gennoun;
+var genq;
+var noun = "";
+var genp;
+var gena;
+var adjective = "";
+var genn2;
+var noun2 = "";
+var genv;
+var verb = "";
+var genv2;
+var verb2 = "";
+var gent;
+var time = "";
+var genv3;
+var verb3 = "";
+var genn3;
+var noun3 = "";
+var genv4;
+var verb4 = "";
+draw = function() {
+if(something === 0){
+    timer += 0.015;
+    background(255, 255, 255);
+    acce += 0.01;
+    textinw -= acce;
+    fill(0, 0, 0);
+    textSize(30);
+    text("Julian Presents...", textinw, height/2);
+    if(textinw < -190){
+        textinw = width;
+    }
+    }
+    if(timer > 15){
+      thingtrue = 1;
+      timer += 0;
+      timer = 15;
+    }
+    if(thingtrue === 1){
+        something = 1;
+    }
+    if(something === 1){
+    timeThingymaBobber += 32;
+    background(255, 255, 255);
+    textSize(41);
+    fill(fills);
+    text("       Random \nPhrase Generator", 42, 99);
+//{
+        if(timeThingymaBobber > 0){
+       fills = color(255, 0, 0);
+    }
+    if(timeThingymaBobber > 100 && fills === color(255, 0, 0)){
+        fills = color(255, 165, 0);
+    }
+    if(timeThingymaBobber > 200 && fills === color(255, 165, 0)){
+        fills = color(255, 255, 0);
+    }
+    if(timeThingymaBobber > 300 && fills === color(255, 255, 0)){
+        fills = color(0, 255, 0);
+    }
+    if(timeThingymaBobber > 400 && fills === color(0, 255, 0)){
+        fills = color(0, 0, 255);
+    }
+    if(timeThingymaBobber > 500 && fills === color(0, 0, 255)){
+        fills = color(128, 0, 128);
+    }
+    if(timeThingymaBobber > 600){
+        timeThingymaBobber = 0;
+    }
+//}
+    fill(fill2);
+    rect(146, 194, 108, 54, 5);
+    fill(0, 0, 0);
+    textSize(33);
+    text("Start", 162, 232);
+    if(mouseX >= 146 && mouseX <= 146+108 &&
+    mouseY >= 194 && mouseY <= 194+54){
+        fill2 = color(235, 235, 235);
+    } else{
+        fill2 = color(255, 255, 255);
+    }
+    }
+    if(something === 2){
+        background(255, 255, 255);
+        fill(0, 0, 0);
+        textSize(30);
+        text("Phrase:", width/2-57, 47);
+        textSize(20);
+        fill(fill3);
+        rect(144, 281, 95, 32);
+        fill(0, 0, 0);
+        text("Generate!", 147, 304);
+        if(mouseX >= 144 && mouseX <= 144+95 &&
+        mouseY >= 281 && mouseY <= 281+32){
+        fill3 = color(235, 235, 235);
+        cursor(HAND);
+        } else{
+            fill3 = color(255, 255, 255);
+        cursor(ARROW);
+        }
+    if(gencycle === 1){
+        if(genq === 0){
+            fill(0, 0, 0);
+            text('"Yee-Haw!", said the' + " " + noun + ".", 19, 107);
+        } else if(genq === 1){
+            fill(0, 0, 0);
+            text('"Laugh Out Loud", said the' + " " + noun + ".", 19, 107);
+        } else if (genq === 2){
+            fill(0, 0, 0);
+            text('"Stay Out of my lawn!", said the' + " " + noun + ".", 19, 107);
+        } else if(genq === 3){
+            fill(0, 0, 0);
+            text('"Goodbye", said the' + " " + noun + ".", 19, 107);
+        }
+         if(gennoun === 0){
+           noun = "cowboy";
+        } else if(gennoun === 1){
+            noun = "elephant";
+        } else if (gennoun === 2){
+            noun = "table";
+        } else if(gennoun === 3){
+            noun = "computer";
+        }
+        if(genp === 0){
+           text("She was very " + adjective + " because of the \n" + noun2  + ". She decided to go and " + verb + "\nthe " + noun2 + " and the " + noun2 + " " + verb2 + "\nIt took " + time + " to " + verb3 + "a\n" + noun3 + " because she was " + adjective + "." + "\nThe " + noun + " " + verb4 + ".", 23, 129);
+        } else if(genp === 1){
+           text("He was very " + adjective + " because of the \n" + noun2 + ". He decided to go and " + verb + "\nthe " + noun2 + " and the " + noun2 + " " + verb2 + "\nIt took " + time + " to " + verb3 + "a\n" + noun3 + " because he was " + adjective + "." + "\nThe " + noun + " " + verb4 + ".", 23, 129);
+        } else if (genp === 2){
+            text("It was very " + adjective + " because of the \n" + noun2 + ". It decided to go and " + verb + "\nthe " + noun2 + " and the " + noun2 + " " + verb2 + "\nIt took " + time + " to " + verb3 + "a\n" + noun3 + " because it was " + adjective + "." + "\nThe " + noun + " " + verb4 + ".", 23, 129);
+        } else if(genp === 3){
+           text("He was very " + adjective + " because of the \n" + noun2 + ". He decided to go and " + verb + "\nthe " + noun2 + " and the " + noun2 + " " + verb2 + "\nIt took " + time + " to " + verb3 + "a\n" + noun3 + " because he was " + adjective + "." + "\nThe " + noun + " " + verb4 + ".", 23, 129); 
+        }
+        if(gena === 0){
+           adjective = "angry";
+        } else if(gena === 1){
+           adjective = "sad";
+        } else if (gena === 2){
+           adjective = "big";
+        } else if(gena === 3){
+           adjective = "bad";
+        }
+        if(genn2 === 0){
+           noun2 = "ukulele";
+        } else if(genn2 === 1){
+           noun2 = "book";
+        } else if (genn2 === 2){
+           noun2 = "ornament";
+        } else if(genn2 === 3){
+           noun2 = "person";
+        }
+        if(genv === 0){
+           verb = "kill";
+        } else if(genv === 1){
+           verb = "jump on";
+        } else if (genv === 2){
+           verb = "talk to";
+        } else if(genv === 3){
+           verb = "run to";
+        }
+         if(genv2 === 0){
+           verb2 = "died.";
+        } else if(genv2 === 1){
+           verb2 = "laughed.";
+        } else if (genv2 === 2){
+           verb2 = "ran away.";
+        } else if(genv2 === 3){
+           verb2 = "flew away.";
+        }
+        if(gent === 0){
+           time = "a day";
+        } else if(gent === 1){
+           time = "a week";
+        } else if (gent === 2){
+           time = "an hour";
+        } else if(gent === 3){
+           time = "a second";
+        }
+        if(genv3 === 0){
+           verb3 = "go to the funeral off of ";
+        } else if(genv3 === 1){
+           verb3 = "draw a picture off of ";
+        } else if (genv3 === 2){
+           verb3 = "eat candy off of ";
+        } else if(genv3 === 3){
+           verb3 = "bungee jump off of ";
+        }
+        if(genn3 === 0){
+           noun3 = "building";
+        } else if(genn3 === 1){
+           noun3 = "house";
+        } else if (genn3 === 2){
+           noun3 = "giant computer";
+        } else if(genn3 === 3){
+           noun3 = "roof";
+        }
+        if(genv4 === 0){
+           verb4 = "then died";
+        } else if(genv4 === 1){
+           verb4 = "then crouched";
+        } else if (genv4 === 2){
+           verb4 = "then opened a computer";
+        } else if(genv4 === 3){
+           verb4 = "then ate popcorn";
+        }
+    }
+    }
+    if(gencycle > 1){
+        gencycle = 1;
+    }
+  
+};
+mouseClicked = function(){
+    if((mouseX >= 146 && mouseX <= 146+108 &&
+    mouseY >= 194 && mouseY <= 194+54) && something === 1){
+        something += 1;
+        thingtrue -= 1;
+        timer = 0;
+    }
+    if((mouseX >= 144 && mouseX <= 144+95 &&
+    mouseY >= 281 && mouseY <= 281+32) && something === 2){
+        gencycle += 1;
+        gennoun = floor(random(0 , 4));
+        genq = floor(random(0, 4));
+        genp = floor(random(0, 4));
+        gena = floor(random(0, 4));
+        genn2 = floor(random(0, 4));
+        genv = floor(random(0, 4));
+        genv2 = floor(random(0, 4));
+        gent = floor(random(0, 4));
+        genv3 = floor(random(0, 4));
+        genn3 = floor(random(0, 4));
+        genv4 = floor(random(0, 4));
+    }
+};
+    }};
+
+    
+    var canvas = document.getElementById("mycanvas"); 
+    
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+
+</html>
